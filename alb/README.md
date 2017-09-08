@@ -116,7 +116,7 @@ variable "certificate_arn"                      { default = "" }
 * `id`: ALB ID
 * `arn`: ALB ARN
 * `arn_suffix`
-* `"dns_name` 
+* `dns_name` 
 * `canonical_hosted_zone_id` 
 * `zone_id` 
 * `http_listener_arn` 
