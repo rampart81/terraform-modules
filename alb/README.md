@@ -2,6 +2,13 @@
 A Terraform module for the AWS ALB resource. 
 It configures an application load balancer with listeners and target groups as well as a S3 bucket for logging. 
 
+This module creates the following AWS resources:
+* ALB
+* Security groups for the ALB
+* Listeners
+* Target groups 
+* Target group attachements
+
 > Note that this module creates an ALB that takes HTTP / HTTPS incoming requests and forward it as HTTP request to the attached servers. 
 
 ## Usage

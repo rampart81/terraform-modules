@@ -2,6 +2,15 @@
 Terraform module for default VPC. This modules configures the default VPC (VPC that is automatically created when create a new AWS accont) and configures public subnets and creates private subnets. 
 For the private subnets, it sets up NAT gateway so that private subnets can access internet thru the public subnets (but private subnets cannot be access externally)
 
+This module creates/configures the following AWS resources:
+
+* Default VPC 
+* Two public subnets
+* Two private subnets
+* A default routing table for the public subnets 
+* A routing table for the private subnets
+* NAT gateway for the private subnets to access internet thru
+
 ## Usage
 ```terraform
 module "default_vpc" {
