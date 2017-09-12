@@ -7,3 +7,4 @@ Terraform Modules for AWS
 * [kms](./kms): Key Management Service
 * [vpc](./vpc): VPC
 * [vpc_peering](./vpc_peering): VPC Peering
+* [rds](./rds): AWS RDS
