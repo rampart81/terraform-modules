@@ -45,5 +45,5 @@ output "private_route_table_id" {
 }
 
 output "nat_gateway_public_ip" {
-  value = "${aws_nat_gateway.nat.public_ip}
+  value = "${aws_nat_gateway.nat.public_ip}"
 }
