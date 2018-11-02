@@ -11,37 +11,37 @@ resource "aws_db_parameter_group" "db" {
   ## Change char settings so that korean texts can be written/read properly
   parameter {
     name  = "character_set_server"
-    value = "utf8"
+    value = "utf8mb4"
   }
 
   parameter {
     name  = "character_set_client"
-    value = "utf8"
+    value = "utf8mb4"
   }
 
   parameter {
     name  = "character_set_connection"
-    value = "utf8"
+    value = "utf8mb4"
   }
 
   parameter {
     name  = "character_set_database"
-    value = "utf8"
+    value = "utf8mb4"
   }
 
   parameter {
     name  = "character_set_results"
-    value = "utf8"
+    value = "utf8mb4"
   }
 
   parameter {
     name  = "collation_connection"
-    value = "utf8_general_ci"
+    value = "utf8mb4_general_ci"
   }
 
   parameter {
     name  = "collation_server"
-    value = "utf8_unicode_ci"
+    value = "utf8mb4_unicode_ci"
   }
 }
 
