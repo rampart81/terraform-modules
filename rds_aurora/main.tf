@@ -46,6 +46,7 @@ resource "aws_rds_cluster_parameter_group" "db" {
 }
 
 resource "aws_rds_cluster" "db" {
+  engine                          = "${var.engine}"
   cluster_identifier              = "${var.cluster_identifier}"
   availability_zones              = ["${var.availability_zones}"]
   database_name                   = "${var.database_name}"
@@ -62,10 +63,11 @@ resource "aws_rds_cluster" "db" {
 }
 
 resource "aws_rds_cluster_instance" "db" {
-  count              = "${var.cluster_instance_count}"
-  identifier         = "${var.cluster_identifier}-${count.index}"
-  instance_class     = "${var.instance_class}"
-  apply_immediately  = "${var.apply_immediately}"
+  engine            = "${var.engine}"
+  count             = "${var.cluster_instance_count}"
+  identifier        = "${var.cluster_identifier}-${count.index}"
+  instance_class    = "${var.instance_class}"
+  apply_immediately = "${var.apply_immediately}"
 
   db_subnet_group_name = "${aws_db_subnet_group.db.name}"
   cluster_identifier   = "${aws_rds_cluster.db.id}"
