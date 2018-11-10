@@ -118,5 +118,5 @@ resource "aws_rds_cluster_instance" "db" {
 
   db_subnet_group_name    = "${aws_db_subnet_group.db.name}"
   cluster_identifier      = "${aws_rds_cluster.db.id}"
-  db_parameter_group_name = "${aws_rds_parameter_group.db.name}"
+  db_parameter_group_name = "${aws_db_parameter_group.db.name}"
 }
