@@ -19,7 +19,7 @@ resource "aws_s3_bucket" "access_log" {
     }
   ]
 }
-  EOF
+EOF
 
   lifecycle_rule {
     id      = "log_lifecycle"
