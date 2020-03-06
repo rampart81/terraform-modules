@@ -25,3 +25,11 @@ output "private_route_table_id" {
 output "nat_gateway_public_ip" {
   value = "${aws_nat_gateway.nat.public_ip}"
 }
+
+output "public_zone_to_subnet_id_map" {
+  value = { for subnet in aws_subnet.public_availability_zones: subnet.availability_zone => subnet.id }
+}
+
+output "private_zone_to_subnet_id_map" {
+  value = { for subnet in aws_subnet.private_availability_zones: subnet.availability_zone => subnet.id }
+}

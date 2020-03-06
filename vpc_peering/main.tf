@@ -23,7 +23,7 @@ resource "aws_vpc_peering_connection" "vpc_peering" {
   # only works if both VPCs are owned by the same account.
   auto_accept = true
 
-  tags {
+  tags = {
     Name = var.name
   }
 }
