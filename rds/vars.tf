@@ -10,7 +10,7 @@ variable "password"                            {             }
 variable "security_group_ids"                  { type = list } 
 variable "multi_az"                            {             } 
 variable "storage_type"                        {             } 
-variable "iops"                                {             } 
+variable "iops"                                { default = "" } 
 variable "publicly_accessible"                 {             } 
 variable "allow_major_version_upgrade"         {             } 
 variable "auto_minor_version_upgrade"          {             } 
