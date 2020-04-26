@@ -16,3 +16,11 @@ variable "private_available_zones" {
     zone       = string
   }))
 }
+
+variable "tags" {
+  type     = "map"
+  default  = {
+    "Name" = var.name
+  }
+}
+

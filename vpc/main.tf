@@ -19,7 +19,7 @@ resource "aws_subnet" "public_availability_zones" {
 	cidr_block        = each.value.cidr_block
 	availability_zone = each.value.zone
 
-  tags = { Name = "${var.name} Public Availability Zone ${each.key}" }
+  tags  = each.value.tags
 }
 
 ############################################################ 
@@ -32,7 +32,7 @@ resource "aws_subnet" "private_availability_zones" {
 	cidr_block        = each.value.cidr_block
 	availability_zone = each.value.zone
 
-  tags = { Name = "${var.name} Private Availability Zone ${each.key}" }
+  tags  = each.value.tags
 }
 
 

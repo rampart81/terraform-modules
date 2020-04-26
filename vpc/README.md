@@ -22,7 +22,10 @@ module "backend" {
   public_available_zones = [
     {
       zone       = "ap-northeast-2a",
-      cidr_block = "10.0.0.0/24"
+      cidr_block = "10.0.0.0/24",
+      tags       = {
+        "Name" = "Zone 1"
+      }
     },
     {
       zone       = "ap-northeast-2b",
@@ -30,22 +33,34 @@ module "backend" {
     },
     {
       zone       = "ap-northeast-2c",
-      cidr_block = "10.0.4.0/24"
+      cidr_block = "10.0.4.0/24",
+      tags       = {
+        "Name" = "Zone 2"
+      }
     }
   ]
 
   private_available_zones = [
     {
       zone       = "ap-northeast-2a",
-      cidr_block = "10.0.20.0/24"
+      cidr_block = "10.0.20.0/24",
+      tags       = {
+        "Name" = "Zone 1"
+      }
     },
     {
       zone       = "ap-northeast-2b",
-      cidr_block = "10.0.22.0/24"
+      cidr_block = "10.0.22.0/24",
+      tags       = {
+        "Name" = "Zone 2"
+      }
     },
     {
       zone       = "ap-northeast-2c",
-      cidr_block = "10.0.24.0/24"
+      cidr_block = "10.0.24.0/24",
+      tags       = {
+        "Name" = "Zone 3"
+      }
     }
   ]
 }
@@ -53,23 +68,12 @@ module "backend" {
 
 ## Variables
 ```terraform
-variable name                                  {                } 
-variable cidr_block                            {                } 
-variable enable_dns_support                    { default = true } 
-variable enable_dns_hostnames                  { default = true } 
-
-variable "public_available_zones" {
-  type = list(object({
-    cidr_block = string
-    zone       = string
-  }))
-}
-
-variable "private_available_zones" {
-  type = list(object({
-    cidr_block = string
-    zone       = string
-  }))
+variable name                      {                } 
+variable cidr_block                {                } 
+variable enable_dns_support        { default = true } 
+variable enable_dns_hostnames      { default = true } 
+variable "public_available_zones"  {                } 
+variable "private_available_zones" {                } 
 ```
 
 ## Outputs
