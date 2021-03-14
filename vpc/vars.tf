@@ -7,6 +7,7 @@ variable "public_available_zones" {
   type = list(object({
     cidr_block = string
     zone       = string
+    tags       = map(any)
   }))
 }
 
@@ -14,13 +15,6 @@ variable "private_available_zones" {
   type = list(object({
     cidr_block = string
     zone       = string
+    tags       = map(any)
   }))
 }
-
-variable "tags" {
-  type     = "map"
-  default  = {
-    "Name" = var.name
-  }
-}
-
